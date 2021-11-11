@@ -49,7 +49,7 @@ def ahorcar(a):
         run = True
     elif a == 2:
         opciones = ["AVENGERS INFINITY WAR","JUSTICE LEAGUE","SPACE JAM","BRIGHTBURN","VENOM","SPIDER MAN","HARRY POTTER",
-                    "SUPERMAN","AQUAMAN","TITANIC","THE DARK KNIGHT","WONDER WOMAN","TRANSFORMERS","THE HOBIT","RESIDENT EVIL",
+                    "SUPERMAN","AQUAMAN","TITANIC","THE DARK KNIGHT","WONDER WOMAN","TRANSFORMERS","THE HOBBIT","RESIDENT EVIL",
                     "BLACK WIDOW","STAR WARS"] #Lista con películas
         categoria = "Películas"
         run = True
