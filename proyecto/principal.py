@@ -1,7 +1,6 @@
 import random
-
+import os
 from pip._internal.vcs import git
-
 
 def inicio(): #Esto es la pantalla de inicio
     print("  **** UTEC GAMES ****  ")
@@ -14,10 +13,13 @@ def inicio(): #Esto es la pantalla de inicio
     while opcion not in ["1","2","3"]: #Esto es para que se elija una opción del 1 al 3 o sino se vuelve a pedir el input
         opcion = input("Elija una opción válida : ")
     if opcion == "1":
+        os.system("cls")
         ahorcado() #Se va a la función ahorcado
     elif opcion == "2":
+        os.system("cls")
         inicio() #Como no hay otro juego, se vuelve a la pantalla de inicio
     elif opcion == "3":
+        os.system("cls")
         print("Cerrando UTEC GAMES...")
 
 def ahorcado(): #Acá se va a una pantalla principal para esta función
@@ -33,6 +35,7 @@ def ahorcado(): #Acá se va a una pantalla principal para esta función
     opthang = input("Selecciones una opción : ")
     while opthang not in ["1","2","3","4"]: #Esto es para que se elija una opcion entre 1 a 4
         opthang = input("Elija una opción válida : ")
+    os.system("cls")
     ahorcar(int(opthang)) #Elegido una opción válida, se va a la función ahorcar
 def ahorcar(a):
     categoria = ""
@@ -110,11 +113,12 @@ def ahorcar(a):
                 print(input("Escriba cualquier cosa para salir --> ")) #Esto es para que escribas cualquier cosa para continuar
                 break #Este break es necesario ya que si no lo ponemos, cuando tratemos se cerrar el juego, en el terminal saldrá error o seguirá
                       #con el juego
-            elif encontrar == eleccion and intento == 6:
+            elif encontrar != eleccion and intento == 6:
                 print("Lo siento, la palabra era",eleccion)     #Este mensaje sale si se acaban los intentos
                 print(input("Escriba cualquier cosa para salir --> "))
                 break #Este break es igual de importante que el anterior
-
+            os.system("cls")
+        os.system("cls")
         ahorcado() #Todo se rompe y vuelve a la pantalla principal de la función ahorcado
 
 
@@ -176,4 +180,6 @@ def hangdraw(intento):
         print("|                |")
         print("|________________|")
 
+def michi():
+    return None
 inicio() #Esto es para que todo se inicie
