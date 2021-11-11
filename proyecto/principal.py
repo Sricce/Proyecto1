@@ -42,11 +42,15 @@ def ahorcar(a):
     opciones = [] #La opciones van a estar en mayúscula para que sea mas facil enlazar con las letras que vamos a adivinar
     run = False
     if a == 1: #Si la variable opthang de la función anterior fue 1, se coge esta opción. Lo mismo con los otros
-        opciones = ["BREAKING BAD","SQUID GAME","GAME OF THRONES","PRISON BREAK","LUCIFER"] #Lista con series
+        opciones = ["BREAKING BAD","SQUID GAME","GAME OF THRONES","PRISON BREAK","LUCIFER","DARK","YOU","WHAT IF",
+                    "THE WALKING DEAD","WANDAVISION","RICK AND MORTY","LOKI","ONE PIECE","RIVERDALE","BLACK MIRROR",
+                    "THE SIMPSONS","STRANGER THINGS","GREYS ANATOMY"] #Lista con series
         categoria = "Series"
         run = True
     elif a == 2:
-        opciones = ["AVENGERS INFINITY WAR","JUSTICE LEAGUE","SPACE JAM","BRIGHTBURN","VENOM"] #Lista con películas
+        opciones = ["AVENGERS INFINITY WAR","JUSTICE LEAGUE","SPACE JAM","BRIGHTBURN","VENOM","SPIDER MAN","HARRY POTTER",
+                    "SUPERMAN","AQUAMAN","TITANIC","THE DARK KNIGHT","WONDER WOMAN","TRANSFORMERS","THE HOBIT","RESIDENT EVIL",
+                    "BLACK WIDOW","STAR WARS"] #Lista con películas
         categoria = "Películas"
         run = True
     elif a == 3:
