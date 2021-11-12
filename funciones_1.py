@@ -1,0 +1,169 @@
+"""
+    A continuación, se nombran las siguientes funciónes utilizadas en el proyecto.
+    * hangdraw(intento)
+    * opcionesList(a)
+    * endingdraw(b)
+"""
+def hangdraw(intento):
+    """
+    Esta función recibe un parámetro entero 'intento' del 1 al 6 y dibuja la horca dependiendo el valor de 
+    'intento'
+    """
+
+    # 'intento' puede ser cualquier valor del 1 al 6 y va aumentando según el usuario fallé al insertar
+    # una letra en el 'guees'.
+    if intento == 0:
+        print(" ________________")  
+        print("|____            |")
+        print("|                |")
+        print("|                |")
+        print("|                |")
+        print("|                |")
+        print("|________________|")
+    elif intento == 1:
+        print(" ________________")
+        print("|____            |")
+        print("|    o           |")
+        print("|                |")
+        print("|                |")
+        print("|                |")
+        print("|________________|")
+    elif intento == 2:
+        print(" ________________")
+        print("|____            |")
+        print("|    o           |")
+        print("|    |           |")
+        print("|                |")
+        print("|                |")
+        print("|________________|")
+    elif intento == 3:
+        print(" ________________")
+        print("|____            |")
+        print("|    o           |")
+        print("|   /|           |")
+        print("|                |")
+        print("|                |")
+        print("|________________|")
+    elif intento == 4:
+        print(" ________________")
+        print("|____            |")
+        print("|    o           |")
+        print("|   /|\          |")
+        print("|                |")
+        print("|                |")
+        print("|________________|")
+    elif intento == 5:
+        print(" ________________")
+        print("|____            |")
+        print("|    o           |")
+        print("|   /|\          |")
+        print("|   /            |")
+        print("|                |")
+        print("|________________|")
+    elif intento == 6:
+        print(" ________________")
+        print("|____            |")
+        print("|    o           |")
+        print("|   /|\          |")
+        print("|   / \          |")
+        print("|                |")
+        print("|________________|")
+
+def opcionesList(a):
+    """
+    Esta función sirve para elegir las palabras que vamos a adivinar en el transcurso del juego, basado en la
+    categoría que seleccionamos en un inicio.
+    """
+    # Definimos 'opciones' como una lista vacía.
+    # Posteriormente se sobreescribirá dependiendo el valor de 'a'.
+    # Esta lista se sobreescribirá con una lista de cadenas en mayúscula para que sea más fácil enlazar con las
+    # letras que el usuario va a adivinar.
+    opciones = []
+    if a == 1:
+        opciones = ["BREAKING BAD", "SQUID GAME", "GAME OF THRONES", "PRISON BREAK", "LUCIFER", "DARK", "YOU",
+                    "WHAT IF",
+                    "THE WALKING DEAD", "WANDAVISION", "RICK AND MORTY", "LOKI", "ONE PIECE", "RIVERDALE",
+                    "BLACK MIRROR",
+                    "THE SIMPSONS", "STRANGER THINGS", "GREYS ANATOMY"]  # Lista con series
+    elif a == 2:
+        opciones = ["AVENGERS INFINITY WAR", "JUSTICE LEAGUE", "SPACE JAM", "BRIGHTBURN", "VENOM", "SPIDER MAN",
+                    "HARRY POTTER",
+                    "SUPERMAN", "AQUAMAN", "TITANIC", "THE DARK KNIGHT", "WONDER WOMAN", "TRANSFORMERS", "THE HOBBIT",
+                    "RESIDENT EVIL",
+                    "BLACK WIDOW", "STAR WARS"]  # Lista con películas
+    elif a == 3:
+        opciones = ["PROGRAMACIÓN", "CÁLCULO DE UNA VARIABLE", "MATEMÁTICAS DISCRETAS", "CÁLCULO VECTORIAL",
+                    "ÁLGEBRA LINEAL",
+                    "ECUACIONES DIFERENCIALES", "ÓPTICAS Y ONDAS", "LABORATORIO DE COMUNICACIÓN",
+                    "ESTADÍSTICA Y PROBABILIDADES",
+                    "DESARROLLO BASADO EN PLATAFORMAS", "BASE DE DATOS", "PROYECTO INTERDISCIPLINARIO",
+                    "MÉTODOS NUMÉRICOS",
+                    "ALGORITMOS Y ESTRUTURAS DE DATOS", "ARQUITECTURA DE COMPUTADORAS", "CLOUD COMPUTING",
+                    "EMPRESA Y CONSUMIDOR",
+                    "COMPILADORES", "ANÁLISIS Y DISEÑO DE ALGORITMOS", "INGENIERÍA DE SOFTWARE", "MACHINE LEARNING",
+                    "SISTEMAS OPERATIVOS", "FINANZAS EMPRESARIALES", "COMPUTACIÓN PARALELA Y DISTRIBUIDA",
+                    "COMPUTACIÓN GRÁFICA",
+                    "INTERACCIÓN HUMANO COMPUTADOR", "REDES Y COMUNICACIONES", "INVESTIGACIÓN EN COMPUTACIÓN",
+                    "ARTE Y TECNOLOGIA",
+                    "INTERNET DE LAS COSAS", "ÉTICA Y TECNOLOGÍA", "EVALUACIÓN FINANCIERA DE PROYECTOS",
+                    "ESTRATEGIA Y ORGANIZACIONES"] #Lista de cursos CS
+    # Finalmente, retornamos la lista opciones para seguir con el procedimiento del código
+    return opciones
+
+def endingdraw(b):
+    """
+    Esta función sirve para mostrar un dibujo relacionado a nuestro resultado en el juego del ahorcado.
+    La primera opción es cuando ganamos y la segunda opción es cuando perdemos.
+    """
+    if b == 1:
+        print(f"""
+            ░░░░░░░░░░░▄▄
+            ░░░░░░░░░░█░░█
+            ░░░░░░░░░░█░░█
+            ░░░░░░░░░█░░░█
+            ░░░░░░░░█░░░░█
+            ██████▄▄█░░░░░██████▄
+            ▓▓▓▓▓█░░░░░░░░░░░░░░█
+            ▓▓▓▓▓█░░░░░░░░░░░░░░█
+            ▓▓▓▓▓█░░░░░░░░░░░░░░█
+            ▓▓▓▓▓█░░░░░░░░░░░░░░█
+            ▓▓▓▓▓█░░░░░░░░░░░░░░█
+            ▓▓▓▓▓█████░░░░░░░░░█
+            █████▀░░░░▀▀██████▀ 
+                        """) # Cuando ganamos
+    elif b == 2:
+        print(f"""
+            ´´´´´´´´´´´´´´´´´´´´ ¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶´´´´´´´´´´´´´´´´´´´
+            ´´´´´´´´´´´´´´´´´¶¶¶¶¶¶´´´´´´´´´´´´´¶¶¶¶¶¶¶´´´´´´´´´´´´´´´´
+            ´´´´´´´´´´´´´´¶¶¶¶´´´´´´´´´´´´´´´´´´´´´´´¶¶¶¶´´´´´´´´´´´´´´
+            ´´´´´´´´´´´´´¶¶¶´´´´´´´´´´´´´´´´´´´´´´´´´´´´´¶¶´´´´´´´´´´´´
+            ´´´´´´´´´´´´¶¶´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´¶¶´´´´´´´´´´´
+            ´´´´´´´´´´´¶¶´´´´´´´´´´´´´´´´´´´´´`´´´´´´´´´´´¶¶´´´´´´´´´´`
+            ´´´´´´´´´´¶¶´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´¶¶´´´´´´´´´´
+            ´´´´´´´´´´¶¶´¶¶´´´´´´´´´´´´´´´´´´´´´´´´´´´´´¶¶´¶¶´´´´´´´´´´
+            ´´´´´´´´´´¶¶´¶¶´´´´´´´´´´´´´´´´´´´´´´´´´´´´´¶¶´´¶´´´´´´´´´´
+            ´´´´´´´´´´¶¶´¶¶´´´´´´´´´´´´´´´´´´´´´´´´´´´´´¶¶´´¶´´´´´´´´´´
+            ´´´´´´´´´´¶¶´´¶¶´´´´´´´´´´´´´´´´´´´´´´´´´´´´¶¶´¶¶´´´´´´´´´´
+            ´´´´´´´´´´¶¶´´¶¶´´´´´´´´´´´´´´´´´´´´´´´´´´´¶¶´´¶¶´´´´´´´´´´
+            ´´´´´´´´´´´¶¶´¶¶´´´¶¶¶¶¶¶¶¶´´´´´¶¶¶¶¶¶¶¶´´´¶¶´¶¶´´´´´´´´´´´
+            ´´´´´´´´´´´´¶¶¶¶´¶¶¶¶¶¶¶¶¶¶´´´´´¶¶¶¶¶¶¶¶¶¶´¶¶¶¶¶´´´´´´´´´´´
+            ´´´´´´´´´´´´´¶¶¶´¶¶¶¶¶¶¶¶¶¶´´´´´¶¶¶¶¶¶¶¶¶¶´¶¶¶´´´´´´´´´´´´´
+            ´´´´¶¶¶´´´´´´´¶¶´´¶¶¶¶¶¶¶¶´´´´´´´¶¶¶¶¶¶¶¶¶´´¶¶´´´´´´¶¶¶¶´´´
+            ´´´¶¶¶¶¶´´´´´¶¶´´´¶¶¶¶¶¶¶´´´¶¶¶´´´¶¶¶¶¶¶¶´´´¶¶´´´´´¶¶¶¶¶¶´´
+            ´´¶¶´´´¶¶´´´´¶¶´´´´´¶¶¶´´´´¶¶¶¶¶´´´´¶¶¶´´´´´¶¶´´´´¶¶´´´¶¶´´
+            ´¶¶¶´´´´¶¶¶¶´´¶¶´´´´´´´´´´¶¶¶¶¶¶¶´´´´´´´´´´¶¶´´¶¶¶¶´´´´¶¶¶´
+            ¶¶´´´´´´´´´¶¶¶¶¶¶¶¶´´´´´´´¶¶¶¶¶¶¶´´´´´´´¶¶¶¶¶¶¶¶¶´´´´´´´´¶¶
+            ¶¶¶¶¶¶¶¶¶´´´´´¶¶¶¶¶¶¶¶´´´´¶¶¶¶¶¶¶´´´´¶¶¶¶¶¶¶¶´´´´´´¶¶¶¶¶¶¶¶
+            ´´¶¶¶¶´¶¶¶¶¶´´´´´´¶¶¶¶¶´´´´´´´´´´´´´´¶¶¶´¶¶´´´´´¶¶¶¶¶¶´¶¶¶´
+            ´´´´´´´´´´¶¶¶¶¶¶´´¶¶¶´´¶¶´´´´´´´´´´´¶¶´´¶¶¶´´¶¶¶¶¶¶´´´´´´´´
+            ´´´´´´´´´´´´´´¶¶¶¶¶¶´¶¶´¶¶¶¶¶¶¶¶¶¶¶´¶¶´¶¶¶¶¶¶´´´´´´´´´´´´´´
+            ´´´´´´´´´´´´´´´´´´¶¶´¶¶´¶´¶´¶´¶´¶´¶´¶´¶´¶¶´´´´´´´´´´´´´´´´´
+            ´´´´´´´´´´´´´´´´¶¶¶¶´´¶´¶´¶´¶´¶´¶´¶´¶´´´¶¶¶¶¶´´´´´´´´´´´´´´
+            ´´´´´´´´´´´´¶¶¶¶¶´¶¶´´´¶¶¶¶¶¶¶¶¶¶¶¶¶´´´¶¶´¶¶¶¶¶´´´´´´´´´´´´
+            ´´´´¶¶¶¶¶¶¶¶¶¶´´´´´¶¶´´´´´´´´´´´´´´´´´¶¶´´´´´´¶¶¶¶¶¶¶¶¶´´´´
+            ´´´¶¶´´´´´´´´´´´¶¶¶¶¶¶¶´´´´´´´´´´´´´¶¶¶¶¶¶¶¶´´´´´´´´´´¶¶´´´
+            ´´´´¶¶¶´´´´´¶¶¶¶¶´´´´´¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶´´´´´¶¶¶¶¶´´´´´¶¶¶´´´´
+            ´´´´´´¶¶´´´¶¶¶´´´´´´´´´´´¶¶¶¶¶¶¶¶¶´´´´´´´´´´´¶¶¶´´´¶¶´´´´´´
+            ´´´´´´¶¶´´¶¶´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´¶¶´´¶¶´´´´´´
+            ´´´´´´´¶¶¶¶´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´¶¶¶¶´´´´´´´
+                        """) # Cuando perdemos
