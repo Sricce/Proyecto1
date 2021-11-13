@@ -10,7 +10,7 @@ def inicio():
     print("  **** UTEC GAMES ****  ")
     print("")
     print("[1] Juego del ahorcado")
-    print("[2] Otros juegos")
+    print("[2] Próximamente más juegos :)")
     print("[3] Salir")
     print("")
     opcion = input("Ingrese una opción : ")
@@ -131,7 +131,7 @@ def ahorcar(a):
     # -------------------------------------------------------------------------------------------------------------    
     # -------------------------------------------------------------------------------------------------------------
     # -------------------------------------------------------------------------------------------------------------
-    
+
 
     # -------------------------------------------------------------------------------------------------------------
     # -------------------------------EJECUCIÓN DEL JUEGO **** El Ahorcado ***.-------------------------------------
@@ -198,7 +198,7 @@ def ahorcar(a):
             # Recorremos 'eleccion' para comprobar si la letra insertada por el usuario esta en dicha lista.
             if guess.upper() in eleccion:
 
-                # El siguiente bucle for sirve para recorrer 'eleccion' e ir obteniendo la pocisión 'pos' y elemento respectivo 'chr'.                  
+                # El siguiente bucle for sirve para recorrer 'eleccion' e ir obteniendo la posición 'pos' y elemento respectivo 'chr'.
                 for pos, chr in enumerate(eleccion):
                     
                     # Esta parte del código sirve para que cada vez que pongamos una letra en el 'guess', esta se llene
@@ -217,7 +217,6 @@ def ahorcar(a):
                     # con 'str' podría darse el caso de que varios espacios '_' cambien por un carácter igual y no a un carácter
                     # en concreto deacuerdo a la posición.
                     # Ejemplo: guess = A, _____ ____ ---> encontrar = AAAAA AAAA)
-            
 
             # En caso 'guess' no se encuentre en 'eleccion'.
             elif guess.upper() not in eleccion:
@@ -241,19 +240,22 @@ def ahorcar(a):
             # 'eleccion' es la palabra que se asigno desde un principio para adivinar
             if encontrar == eleccion:
                 os.system("cls")  # Limpia la consola
+                hangdraw(intento)
+                print(encontrar)
                 # Cuando se alcanza la palabra, nos recibe un mensaje de felicitación
                 print("Felicidades, la palabra era",eleccion) 
                 endingdraw(1) #Se llama a la función endingdraw para mostrar el dibujo correspondiente a nuestra victoria.
-                print(input("Escriba cualquier cosa para salir --> ")) # Esto es para que escribas cualquier cosa para continuar.
+                input("Escriba cualquier tecla para salir al siguiente juego --> ") # Esto es para que escribas cualquier cosa para continuar.
                 break 
                 # Este break es necesario ya que si no lo ponemos nos saldrá error o seguirá con el juego, cuando tratemos de cerrar 
                 # el juego en el terminal. 
 
             elif encontrar != eleccion and intento == 6:
                 os.system("cls")  # Limpia la consola
+                hangdraw(6) # Se llama al último dibujo del ahoracado que marca nuestra derrota.
                 print("Lo siento, la palabra era",eleccion) # Este mensaje sale si se acaban los intentos.
                 endingdraw(2) #Se llama a la función endingdraw para mostrar el dibujo correspondiente a nuestra derrota.
-                print(input("Escriba cualquier cosa para salir --> "))
+                input("Escriba cualquier tecla para salir al siguiente juego--> ")
                 break 
                 # Este break es igual de importante que el anterior.
             
