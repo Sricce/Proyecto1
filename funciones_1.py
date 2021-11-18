@@ -6,14 +6,16 @@
 """
 def hangdraw(intento):
     """
-    Esta función recibe un parámetro entero 'intento' del 1 al 6 y dibuja la horca dependiendo el valor de 
+    Esta función recibe un parámetro entero 'intento' del 1 al 6 y dibuja la horca dependiendo el valor de
     'intento'
     """
 
     # 'intento' puede ser cualquier valor del 1 al 6 y va aumentando según el usuario fallé al insertar
     # una letra en el 'guees'.
     if intento == 0:
-        print(" ________________")  
+        print('Vidas : 6 | ❤ ❤ ❤ ❤ ❤ ❤')
+        print()
+        print(" ________________")
         print("|____            |")
         print("|                |")
         print("|                |")
@@ -21,6 +23,8 @@ def hangdraw(intento):
         print("|                |")
         print("|________________|")
     elif intento == 1:
+        print('Vidas : 5 | ❤ ❤ ❤ ❤ ❤')
+        print()
         print(" ________________")
         print("|____            |")
         print("|    o           |")
@@ -29,6 +33,8 @@ def hangdraw(intento):
         print("|                |")
         print("|________________|")
     elif intento == 2:
+        print('Vidas : 4 | ❤ ❤ ❤ ❤')
+        print()
         print(" ________________")
         print("|____            |")
         print("|    o           |")
@@ -37,6 +43,8 @@ def hangdraw(intento):
         print("|                |")
         print("|________________|")
     elif intento == 3:
+        print('Vidas : 3 | ❤ ❤ ❤')
+        print()
         print(" ________________")
         print("|____            |")
         print("|    o           |")
@@ -45,6 +53,8 @@ def hangdraw(intento):
         print("|                |")
         print("|________________|")
     elif intento == 4:
+        print('Vidas : 2 | ❤ ❤')
+        print()
         print(" ________________")
         print("|____            |")
         print("|    o           |")
@@ -53,6 +63,8 @@ def hangdraw(intento):
         print("|                |")
         print("|________________|")
     elif intento == 5:
+        print('Vidas : 1 | ❤')
+        print()
         print(" ________________")
         print("|____            |")
         print("|    o           |")
@@ -61,6 +73,8 @@ def hangdraw(intento):
         print("|                |")
         print("|________________|")
     elif intento == 6:
+        print('Vidas : 0 | ☠')
+        print()
         print(" ________________")
         print("|____            |")
         print("|    o           |")

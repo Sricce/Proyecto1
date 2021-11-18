@@ -177,18 +177,19 @@ def ahorcar(a):
             print("")
             hangdraw(intento) # Esta función dibuja la horca que se va a tener al momento de jugar en consola.
             print("")
-            print(encontrar[0:long]) # Imprime los espacios a de la palabra a adivinar, puede ir variando.
+            print(encontrar) # Imprime los espacios a de la palabra a adivinar, puede ir variando.
             print("")
             print(error) # Esto imprime los errores del usuario ([letra]), puede ir variando.
             print("")
 
             # Se va almacenar en 'guess' la letra que el usuario ingrese para adivinar la palabra.
             guess = input("Ingrese una letra: ") 
-            
+
             # Si se escribe más de un valor, se vuelve a preguntar 'guess'.
             while len(guess) > 1: 
                 guess = input("Ingrese una sola letra: ")
-            
+            while guess.upper() in encontrar:
+                guess = input("Ingrese un caracter diferente : ")
             # Definimos 'lista' donde se va a poner cada espacio o letra de la variable 'eleccion' en una lista por separado.
             # Ejemplo: eleccion = hola --> lista = ["h","o","l","a"]
             lista = [] 
