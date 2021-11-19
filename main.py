@@ -186,10 +186,8 @@ def ahorcar(a):
             guess = input("Ingrese una letra: ") 
 
             # Si se escribe más de un valor, se vuelve a preguntar 'guess'.
-            while len(guess) > 1: 
-                guess = input("Ingrese una sola letra: ")
-            while guess.upper() in encontrar:
-                guess = input("Ingrese un caracter diferente : ")
+            while len(guess) > 1 or guess.upper() in encontrar:
+                guess = input("Ingrese una sola letra no adivinada: ")
             # Definimos 'lista' donde se va a poner cada espacio o letra de la variable 'eleccion' en una lista por separado.
             # Ejemplo: eleccion = hola --> lista = ["h","o","l","a"]
             lista = [] 
