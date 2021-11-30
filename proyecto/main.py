@@ -2,7 +2,8 @@
 import os # Librería utilizada para limpiar la consola.
 import random # Importamos la librería random para escoger valores aleatorios.
 from funciones_1 import * # Importamos la función 'ahorcado' del módulo 'funciones_1.py'.
-
+import time
+import json
 def inicio():
     """
     Esta función sin parámetros imprime el menú principal de **** UTEC GAMES ****. 
@@ -10,14 +11,16 @@ def inicio():
     print("  **** UTEC GAMES ****  ")
     print("")
     print("[1] Juego del ahorcado")
-    print("[2] Próximamente más juegos :)")
-    print("[3] Salir")
+    print("[2] Mad Story")
+    print("[3] Próximamente más juegos :)")
+    print("[4] Leaderboard")
+    print("[5] Salir")
     print("")
     opcion = input("Ingrese una opción : ")
     
     # El siguiente bucle while repite el input hasta que la variable 'opcion' este dentro de la lista ["1","2","3"].
 
-    while opcion not in ["1","2","3"]: 
+    while opcion not in ["1","2","3","4","5"]:
         opcion = input("Elija una opción válida : ")
 
     # La siguiente estructura selectiva es para que deacuerdo al valor de 'opcion' vincule a otra determinada función. 
@@ -25,14 +28,18 @@ def inicio():
     if opcion == "1":
         os.system("cls") # Limpia la consola.
         # Se va a la función ahorcado, que previamente ha sido importada de 'funciones.py'.
-        ahorcado() 
-
+        ahorcado()
     elif opcion == "2":
         os.system("cls") # Limpia la consola.
-        # Como no hay otro juego, se vuelve al menú de principal (recursividad).
-        inicio()
-
+        # Se va a la función mad story.
+        madstory()
     elif opcion == "3":
+        os.system("cls")
+        inicio()
+    elif opcion == "4":
+        os.system("cls")
+        leaderboard()
+    elif opcion == "5":
         os.system("cls") # Limpia la consola
         # Finaliza el programa.
         print("Cerrando UTEC GAMES...") 
@@ -43,6 +50,7 @@ def ahorcado():
     """
     print(" **** El Ahorcado *** ")
     print("")
+    candidate = input("Escriba su nombre: ").upper()
     print("Seleccione una categoria")
     print("")
     print("[1] Series")
@@ -60,10 +68,10 @@ def ahorcado():
     os.system("cls") 
     
     # Luego de elegir una opción válida, se ejecuta la función 'ahorcar(a)'.
-    ahorcar(int(opthang))
+    ahorcar(int(opthang),candidate)
 
 # a = int(opthang)
-def ahorcar(a):
+def ahorcar(a,b):
     """
     Esta función recibe un parámetro entero 'a' y se encarga de ejecutar el código para que funcione el juego
     **** El Ahorcado *** dependiendo el valor de a.
@@ -168,6 +176,7 @@ def ahorcar(a):
         # Lo siguiente es un bucle while para correr el juego mientras 'intento' no exeda a 6.
         intento = 0
         error = "Errores: " # Acá almacenaran los errores próximos en caso de fallar intentos.
+        puntajefinish = 60
         while intento <= 6:
 
             # Se imprime el siguiente código que irá cambiando según el intento.
@@ -219,7 +228,7 @@ def ahorcar(a):
 
             # En caso 'guess' no se encuentre en 'eleccion'.
             elif guess.upper() not in eleccion:
-
+                puntajefinish -= 10
                 # Esto sirve para poner los errores en la variable error, con cada letra en el guess que fallemos.
                 error = error+"["+guess.upper()+"]"+" "
                 # Se incrementan los intentos que sirve para los dibujos de la función hangdraw.
@@ -257,14 +266,54 @@ def ahorcar(a):
                 input("Escriba cualquier tecla para salir al siguiente juego--> ")
                 break 
                 # Este break es igual de importante que el anterior.
-            
+
             # Limpiamos la consola
             os.system("cls")
-        
+        with open("leaders.json") as puntos:
+            puntaje = json.load(puntos)
+        for i in puntaje:
+            if b not in puntaje[i]["nombre"]:
+                if puntaje[i]["puntos"] < puntajefinish:
+                    puntaje[i]["puntos"] = puntajefinish
+                    puntaje[i]["nombre"] = b
+                    break
+            else:
+                puntaje[i]["puntos"] += puntajefinish
+                break
+
+        with open("leaders.json", "w") as score:
+            json.dump(puntaje, score)
+
         # Limpiamos la consola
         os.system("cls")
         
         # Todo se termina y se vuelve al menú principal de la función ahorcado.
         ahorcado() 
-
+def madstory():
+    storychoose = 1 #random.randint(1,2)
+    if storychoose == 1:
+        one = input("Frase motivacional?: ")
+        two = input("Número: ")
+        three = input("Animal en plural : ")
+        four = input("Juguete: ")
+        five = input("Otro número: ")
+        six = input("Plato de comida favorita: ")
+        seven = input("Aplicación de celular: ")
+        print(" ")
+        time.sleep(1)
+        print("Listo!!!!")
+        time.sleep(1)
+        os.system("cls")
+        historiamad1(one,two,three,four,five,six,seven)
+        os.system("cls")
+        inicio()
+def leaderboard():
+    print("===LIDERES DEL MOMENTO===")
+    with open("leaders.json") as puntos:
+        puntaje = json.load(puntos)
+    for i in range(4):
+        print(str(i+1)+").",puntaje[str(i)]["nombre"],puntaje[str(i)]["puntos"])
+    print(input("Presione enter para salir"))
+    os.system("cls")
+    inicio()
 inicio() # Incializa el programa

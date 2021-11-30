@@ -1,3 +1,4 @@
+from timer import *
 """
     A continuación, se nombran las siguientes funciónes utilizadas en el proyecto.
     * hangdraw(intento)
@@ -181,3 +182,26 @@ def endingdraw(b):
             ´´´´´´¶¶´´¶¶´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´¶¶´´¶¶´´´´´´
             ´´´´´´´¶¶¶¶´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´¶¶¶¶´´´´´´´
                         """) # Cuando perdemos
+
+def historiamad1(one,two,three,four,five,six,seven):
+    print("**** Mad Story ***")
+    print("Salvando la navidad")
+    m = ["Era de noche, nevaba y hacia demasiado frio. En eso",
+        "apareció un destello rojo en el cielo y escuché el",
+        "sonido de una explosión en el bosque.",
+        "Corrí hacia el lugar y vi a Santa Claus en el suelo, casi",
+        "inconsciente. Solo atiné a decirle '{}' y a".format(one),
+        "darle '{}' cachetadas hasta que reaccionó. Me contó".format(two),
+        "que estaba distraído en '{}' cuando chocó con".format(seven),
+        "un arbol muy alto.",
+        "Su trineo estaba intacto pero sus renos estaban",
+        "inconscientes. Entonces, decidí prestarle '{}' '{}'".format(five,three),
+        "para poder llevar los regalos en su trineo. El aceptó",
+        "gustoso, así que mientras le daba un '{}' para".format(six),
+        "que coma y se recupere, fui a repartir los regalos que",
+        "quedaban. Al terminar, me agradeció regalandome un",
+        "'{}'. En verdad que fue una noche de locos.".format(four)]
+    for i in m:
+        print(i)
+    input("Presione enter para continuar... ")
+
