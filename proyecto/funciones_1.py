@@ -185,7 +185,7 @@ def endingdraw(b):
 
 def historiamad1(one,two,three,four,five,six,seven):
     print("**** Mad Story ***")
-    print("Salvando la navidad")
+    print("Salvando la Navidad")
     m = ["Era de noche, nevaba y hacia demasiado frio. En eso",
         "apareció un destello rojo en el cielo y escuché el",
         "sonido de una explosión en el bosque.",
@@ -194,14 +194,52 @@ def historiamad1(one,two,three,four,five,six,seven):
         "darle '{}' cachetadas hasta que reaccionó. Me contó".format(two),
         "que estaba distraído en '{}' cuando chocó con".format(seven),
         "un arbol muy alto.",
-        "Su trineo estaba intacto pero sus renos estaban",
+        "Su trineo estaba intacto, pero sus renos estaban",
         "inconscientes. Entonces, decidí prestarle '{}' '{}'".format(five,three),
-        "para poder llevar los regalos en su trineo. El aceptó",
-        "gustoso, así que mientras le daba un '{}' para".format(six),
+        "para poder llevar los regalos en su trineo. Él aceptó",
+        "gustoso, así que mientras le daba un(a) '{}' para".format(six),
         "que coma y se recupere, fui a repartir los regalos que",
         "quedaban. Al terminar, me agradeció regalandome un",
-        "'{}'. En verdad que fue una noche de locos.".format(four)]
+        "'{}'. De verdad que fue una noche de locos.".format(four), "Una noche en la que salvé la Navidad."]
     for i in m:
         print(i)
+    print("")
     input("Presione enter para continuar... ")
 
+def historiamad2(one,two,three,four,five,six,seven,eight,nine):
+    print("****Mad Story****")
+    print("Vacaciones de verano")
+    n=["Ya se acercaban las vacaciones y tenia que escoger un",      "lugar a donde viajar.Me puse a buscar en '{}'".format         (seven),
+      "Me parecio interesante conocer '{}' asi que agarre mi mochila y '{}' centimos".format(nine,two),
+      "Cuando llege a '{}', vi a '{}'. No me lo podia".format(nine,eight),
+      "creer ,  me acerque y le dije '{}'. Le pedi una foto pero ".format(one),
+      "me cobro '{}'dolares.Asi que primero le pedi la".format(five),
+      "foto y al final le di '{}'.".format(four),
+      "Me miro raro porque no le habia pagado. Asi que le dije:",
+      "Mira ahi vienen '{}'. '{}' se asusto y se fue corriendo.".format(three,eight),
+      "Ese dia fue muy divertido y tambien presumi la foto en '{}'".format(seven),
+      "y todos mis amigos me felicitaron"]
+    for i in n:
+        print(i)
+    print("")
+    input("Presione enter para continuar...")
+
+def historiamad3(one,two,three, four,five,six,seven):
+  print("****Mad Story****")
+  print("Un día normal en mi vida")
+  p=["Aun me acuerdo de ese día porque sucedió de todo",
+    "Aquel día sentí mucho(a) '{}'.".format(one),
+    "A primera tuve examen de cáculo. Estudíe '{}' horas".format(two),
+    "pero aun así, no llegué a aprobar. Triste después de eso, borré mi cuenta de '{}' ya que me distraía mucho".format(seven),
+    "En la tarde, almorzé en un restaurante cercano. Mi mamá me",
+    "pidó '{}'. Estaba a punto de probar una cucharada cuando".format(six),
+    "de pronto observé que en la calle, '{}' '{}'".format(five, three),
+    "perseguían a un joven. Todas las personas se asustaron y salieron corriendo",
+    "Mi mamá y yo nos escondimos en la cocina del restaurante.",
+    "Pasado el incidente, volvimos a casa. Mi papá ya había llegado, pero con una gran sopresa para mí: un(a) '{}'".format(four),
+    "que cambió mi día. Un día lleno de emociones. Un día normal",
+    "en mi vida."]
+  for i in p:
+    print(i)
+  print("")
+  input("Presione enter para continuar...")
